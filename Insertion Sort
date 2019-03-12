@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+	int e;
+	int c;
+	int b;
+	int a[100];
+	int sayi;
+	printf("Girilecek deger sayisi:");
+	scanf("%d",&sayi);
+	for(b =0; b < sayi; b++){
+		printf("Sayi giriniz:");
+		scanf("%d",&a[b]);
+    }
+    printf("Dizi:");
+    for(c =0;c < sayi;c++){
+    	printf(" %d ",a[c]);
+	}
+	int key;
+	int j;
+	for(j =1; j < sayi ; j++){
+		key = a[j];
+		int i = j-1;
+		while( i >= 0 && a[i]> key){
+			a[i+1] = a[i];
+			i = i-1;
+		}
+		a[i+1] = key;	
+	} 
+	printf("Sirali Dizi:");
+	for(e =0;e < sayi; e++){
+	   printf(" %d ",a[e]);
+    }
+	return 0;
+}
